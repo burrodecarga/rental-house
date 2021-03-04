@@ -8,6 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/utils": "^4.11.2",
+    "dotenv": "^8.2.0",
+    "next-seo": "^4.19.0",
+    "nextjs-redirect": "^5.0.0",
+    "nookies": "^2.5.2",
+    "react-hook-form": "^6.15.1",
+    "react-icons": "^4.2.0",
+    "react-query": "^3.8.2",
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1"

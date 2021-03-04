@@ -10,6 +10,7 @@ import LinkedinIcon from '@material-ui/icons/LinkedIn'
 import styles from "./Header.module.css"
 
 export default function Header({navigation}) {
+  const isLogged=true
   return (
     <>
     <header>
@@ -38,14 +39,15 @@ export default function Header({navigation}) {
             <div className={styles.links}>
               <ul className={styles.ul}>
               {navigation.map(item =>(
-       <li key={item.id} className={styles.li}>
-         <Link href={item.slug}><a>{item.page}</a></Link>
-         </li>
+                    <li key={item.id} className={styles.li}>
+                    <Link href={item.slug}><a>{item.page}</a></Link>
+              </li>
      ))}
               </ul>
             </div>
           </div>
         </nav>
+
         <div className={styles.menuWrap}>
           <input type="checkbox" className={styles.toggler} />
           <div className={styles.hamburger}>
@@ -59,6 +61,9 @@ export default function Header({navigation}) {
          <Link href={item.slug}><a>{item.page}</a></Link>
          </li>
      ))}
+                </ul>
+                <ul>
+
                 </ul>
               </div>
             </div>
