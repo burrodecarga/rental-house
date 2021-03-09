@@ -9,6 +9,7 @@ import getConfig from 'next/config';
 import Router from 'next/router'
 import { parseCookies } from 'nookies'
 import nookies from 'nookies'
+import { UserContextProvider } from '../context/UserContext'
 
 
 
@@ -20,12 +21,14 @@ function MyApp({ Component, pageProps, navigation }) {
   //console.log(navigation)
   return (
     <>
+      <UserContextProvider >
       <DefaultSeo {...SEO} />
       <Header navigation={navigation} />
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
       </QueryClientProvider>
       <Footer />
+      </ UserContextProvider>
     </>)
 }
 

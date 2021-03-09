@@ -15,6 +15,7 @@ export default function login ({  username, password }) {
     headers: {
       "Content-Type": "application/json"
     },
+    // credentials:'include',
     body: JSON.stringify(loginInfo)
   }).then(res => {
     if (!res.ok) throw new Error('Response is NOT ok')

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import useUser from '../../hooks/useUser'
 import { useEffect } from "react";
 import Router from 'next/router'
+import useUser from '../../hooks/useUser'
 
 
 export default function Login({onLogin}) {
@@ -9,16 +9,11 @@ export default function Login({onLogin}) {
   const [password, setPassword] = useState("12345678");
   const {isLoginLoading, hasLoginError, login, isLogged} = useUser()
 
-  useEffect(() => {
-    if (isLogged) {
-      Router.push('/')  
-      onLogin && onLogin()
-    }
-  }, [isLogged, onLogin])
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     login({ username, password })
+  
   };
 
   return (
@@ -50,6 +45,9 @@ export default function Login({onLogin}) {
       }
       {
         hasLoginError && <strong>Credentials are invalid</strong>
+      }
+      {
+       (isLogged && Router.push('/'))
       }
     </>
   );
